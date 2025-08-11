@@ -1,78 +1,87 @@
-max-width: 1280px;
+/* Container styling */
+.container {
+  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
+/* Logo styling */
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;/* ===== HEADER STYLING ===== */
-header {
-  height: 50px;                /* Header is 50 pixels tall */
-  line-height: 50px;           /* Vertically centers text inside header */
-  background: linear-gradient(to right, red, orange);  /* Red to orange gradient background */
-  color: white;                /* White text for contrast */
-}
-
-/* ===== FOOTER STYLING ===== */
-footer {
-  height: 30px;                /* Footer is 30 pixels tall */
-  line-height: 30px;           /* Vertically centers text */
-  background: linear-gradient(to right, orange, red);  /* Orange to red background */
-  font-size: 8pt;              /* Small font for footer text */
-  color: white;                /* White text color */
-}
-
-/* ===== MAIN SECTION STYLING ===== */
-section {
-  height: calc(100% - 80px);   /* Takes the full page height minus header (50px) and footer (30px) */
-  overflow: auto;              /* Adds scrollbar if content is too long */
-}
-
-/* ===== SLIDER CONTAINER ===== */
-.slider {
-  width: 100%;                 /* Takes the full width of the screen */
-  height: 100%;                /* Takes the full height of the section */
-  overflow: hidden;            /* Hides content that overflows (needed for sliding effect) */
-}
-
-/* ===== SLIDES WRAPPER ===== */
-.slides {
-  width: 100%;                 /* Full width of container */
-  height: 100%;                /* Full height */
-  display: flex;               /* Arranges child slides side-by-side horizontally */
-  transition: transform 1s ease-in-out; /* Smooth sliding animation when slides move */
-}
-
-/* ===== INDIVIDUAL SLIDE STYLING ===== */
-.slide {
-  width: 100%;                 /* Each slide takes the full width of the screen */
-  height: 100%;                /* Full height of the slider */
-  background-size: 100% 100%;  /* Background image covers the full slide without repeating */
-  flex-shrink: 0;              /* Prevents slide from shrinking when container resizes */
-}
-
-/* ===== BACKGROUND IMAGES FOR EACH SLIDE ===== */
-.s1 {
-  background-image: url('/1.jpg'); /* First slide uses image b1.png */
-}
-.s2 {
-  background-image: url('/2.jpg'); /* Second slide uses image b2.png */
-}
-.s3 {
-  background-image: url('/3.jpg'); /* Third slide uses image b3.png */
-}
-
+  will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Header styling */
+header {
+  height: 50px; /* Header is 50 pixels tall */
+  line-height: 50px; /* Vertically centers text inside header */
+  background: linear-gradient(to right, red, orange); /* Red to orange gradient background */
+  color: white; /* White text for contrast */
+}
+
+/* Footer styling */
+footer {
+  height: 30px; /* Footer is 30 pixels tall */
+  line-height: 30px; /* Vertically centers text */
+  background: linear-gradient(to right, orange, red); /* Orange to red background */
+  font-size: 8pt; /* Small font for footer text */
+  color: white; /* White text color */
+}
+
+/* Main section styling */
+section {
+  height: calc(100% - 80px); /* Takes the full page height minus header (50px) and footer (30px) */
+  overflow: auto; /* Adds scrollbar if content is too long */
+}
+
+/* Slider container */
+.slider {
+  width: 100%; /* Takes the full width of the screen */
+  height: 100%; /* Takes the full height of the section */
+  overflow: hidden; /* Hides content that overflows (needed for sliding effect) */
+}
+
+/* Slides wrapper */
+.slides {
+  width: 100%; /* Full width of container */
+  height: 100%; /* Full height */
+  display: flex; /* Arranges child slides side-by-side horizontally */
+  transition: transform 1s ease-in-out; /* Smooth sliding animation when slides move */
+}
+
+/* Individual slide styling */
+.slide {
+  width: 100%; /* Each slide takes the full width of the screen */
+  height: 100%; /* Full height of the slider */
+  background-size: 100% 100%; /* Background image covers the full slide without repeating */
+  flex-shrink: 0; /* Prevents slide from shrinking when container resizes */
+}
+
+/* Background images for each slide */
+.s1 {
+  background-image: url('/1.jpg'); /* First slide image */
+}
+
+.s2 {
+  background-image: url('/2.jpg'); /* Second slide image */
+}
+
+.s3 {
+  background-image: url('/3.jpg'); /* Third slide image */
+}
+
+/* Logo spin animation */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -82,16 +91,19 @@ section {
   }
 }
 
+/* Animation respecting prefers-reduced-motion */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* Card styling */
 .card {
   padding: 2em;
 }
 
+/* Read the docs link styling */
 .read-the-docs {
   color: #888;
 }
