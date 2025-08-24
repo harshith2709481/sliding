@@ -12,7 +12,7 @@ class App extends Component {
     // Define the initial state of the app
     this.state = {
       index: 0,         // current slide index (starts at slide 0)
-      slideCount: 3     // total number of slides (3 in total)
+      slideCount: 3     // total number of slides
     };
 
     // Bind the method so it can access `this`
@@ -21,42 +21,41 @@ class App extends Component {
 
   // React lifecycle method: runs automatically after the component is loaded
   componentDidMount() {
-    // Automatically call autoSlide every 3 seconds (3000 milliseconds)
     this.interval = setInterval(this.autoSlide, 3000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval); // Prevent memory leaks
   }
 
   // Function to slide to the next image
   autoSlide() {
-    // Calculate the next slide index (loops back to 0 after the last slide)
     let nextIndex = (this.state.index + 1) % this.state.slideCount;
-
-    // Update the state with the new index
     this.setState({ index: nextIndex });
-
-    // Move the slide container to show the correct slide
-    // For example, if nextIndex = 1 → translateX(-100%), index 2 → -200%, etc.
-    document.getElementById("slideRef").style.transform = `translateX(-${nextIndex * 100}%)`;
   }
 
   // Render method to show content on the screen
   render() {
-    const { index } = this.state; // Get the current index from state
+    const { index } = this.state;
 
     return (
       <>
         {/* Top header section */}
         <header>
-          <div className='logo'>Sliding Page - Slide {index}</div>
+          <div className='logo'>Sliding Page - Slide {index + 1}</div>
         </header>
 
         {/* Middle section containing the image slider */}
         <section>
           <div className='slider'>
-            <div className='slides' id="slideRef">
-              {/* Each div is one full-screen slide with a background image */}
-              <div className='slide s1'></div>
-              <div className='slide s2'></div>
-              <div className='slide s3'></div>
+            <div
+              className='slides'
+              id="slideRef"
+              style={{ transform: `translateX(-${index * 100}%)` }}
+            >
+              <img src="1.png" alt="Slide 1" className='slide s1' />
+              <img src="2.png" alt="Slide 2" className='slide s2' />
+              <img src="3.png" alt="Slide 3" className='slide s3' />
             </div>
           </div>
         </section>
