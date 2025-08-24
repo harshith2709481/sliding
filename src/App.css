@@ -46,11 +46,11 @@ section {
 
 /* ===== BACKGROUND IMAGES FOR EACH SLIDE ===== */
 .s1 {
-  background-image: url('/1.png/'); /* First slide uses image b1.png */
+  background-image: url('/1.png'); /* First slide uses image b1.png */
 }
 .s2 {
-  background-image: url('/2.png/'); /* Second slide uses image b2.png */
+  background-image: url('/2.png'); /* Second slide uses image b2.png */
 }
 .s3 {
-  background-image: url('/3.png/'); /* Third slide uses image b3.png */
+  background-image: url('/3.png'); /* Third slide uses image b3.png */
 }
